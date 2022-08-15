@@ -36,6 +36,8 @@ WPS下载链接：https://www.wps.cn/product
 - 更新第二章 Excel数据格式
 - 更新第三章 Excel的快捷操作
 
+2022-08-15
+- 更新第四章 Excel的表合并
 ## 目录
 #### 1. 数据缘何而来
 
