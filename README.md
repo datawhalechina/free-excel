@@ -48,6 +48,8 @@ WPS下载链接：https://www.wps.cn/product
 2022-08-25
 - 更新第六章 Excel的函数2
 
+2022-09-01
+- 更新第七章 Excel的函数3
 
 ## 贡献
 
