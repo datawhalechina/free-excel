@@ -3,6 +3,7 @@
 free excel中文意为**自由Excel**，源于希望学习者能够通过该教程能够更加自由地使用Excel进行数据分析、数据统计，解放Excel不再为Excel所困。内容上会更加偏实践应用，力求尽可能简单而又具有一定深度。其他很多教程都是按功能模块来讲解，而且还详细的说明每个功能，令人枯燥乏味。Free Excel根据多年工作经验总结而成，很多内容是常用且重要的，同时学完后能加深对Excel的理解。授之以鱼不如授之以渔，让我们开始愉快的Excel之旅吧！
 
 v1.0.0 beta版B站配套视频：https://www.bilibili.com/video/BV1r64y1h75T
+v2.0.0 版配套视频正在筹备中...
 
 ## 环境
 
@@ -13,11 +14,6 @@ WPS下载链接：https://www.wps.cn/product
 注：本课程中部分函数为Excel新更新的内容，如果想体验Excel新添加的函数，可将Excel更新至最新版，或将WPS更新至11.1版及以上
 
 
-## 已知问题
-
-1. Windows Office2016和Mac Office365存在从网站导入数据乱码，无法识别表格数据。
-
-
 
 ## 更新
 
@@ -26,7 +22,7 @@ WPS下载链接：https://www.wps.cn/product
 |    版本     |    日期    |       更新内容       |
 | :---------: | :--------: | :------------------: |
 | v1.0.0 beta | 2021-08-08 | 添加章节内容及数据集 |
-|             |            |                      |
+| v2.0.0      | 2022-09-09 | 全新的Excel内容与教程 |
 
 ## 更新日志
 2022-04-16
@@ -57,12 +53,15 @@ WPS下载链接：https://www.wps.cn/product
 2022-09-05
 - 更新第九章 Excel数据透视
 
+2022-09-08
+- 更新第十章 Excel看板
+
 ## 贡献
 
-|       贡献者       |     章节      |             主页              |          联系          |
-| :----------------: | :-----------: | :--------------------------: | :--------------------: |
-| Jan Yang（简杨君） | 第1-6章(新增) | https://github.com/yangjiada | yang.jiada@foxmail.com |
-| 牧小熊（聂雄伟）   | 章节修订       |https://github.com/muxiaoxiong| xiongweinie@foxmail.com|
+|       贡献者       |     版本      |             主页              |          联系          |
+| :----------------: | :-----------:| :--------------------------: | :--------------------: |
+| Jan Yang（简杨君） | v1.0.0 beta | https://github.com/yangjiada | yang.jiada@foxmail.com |
+| 牧小熊（聂雄伟）   | v2.0.0       |https://github.com/muxiaoxiong| xiongweinie@foxmail.com|
 
 
 ## 关注我们
