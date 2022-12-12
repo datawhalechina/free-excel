@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第六章 Excel函数-查找函数 &#8212; free-excel 2.1 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/s4defs-roles.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="第七章 Excel函数-动态函数" href="chap7.html" />
+    <link rel="prev" title="第五章 Excel函数-文本函数" href="chap5.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E4%B8%BB%E9%A1%B5.html">
+  主页
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  教程
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E4%BD%9C%E8%80%85.html">
+  作者
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Datawhale.html">
+  Datawhale
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E7%BB%83%E4%B9%A0%E9%A2%98%E5%8F%82%E8%80%83%E6%93%8D%E4%BD%9C.html">
+  练习题参考操作
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/datawhalechina/free-excel" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="在这里搜索" aria-label="在这里搜索" autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap1.html">
+   第一章 Excel与数据格式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap2.html">
+   第二章 Excel的快捷操作
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap3.html">
+   第三章 Excel的表合并
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap4.html">
+   第四章 Excel函数-逻辑判断
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap5.html">
+   第五章 Excel函数-文本函数
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   第六章 Excel函数-查找函数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap7.html">
+   第七章 Excel函数-动态函数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap8.html">
+   第八章Excel数据可视化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap9.html">
+   第九章Excel数据透视
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap10.html">
+   第十章Excel看板
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vlookup">
+   1.VLOOKUP
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n7">
+     案例1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n15">
+     案例2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n26">
+     案例3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n32">
+     案例4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xlookup">
+   2 XLOOKUP
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n55">
+     案例1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n62">
+     案例2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n67">
+     案例3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n72">
+     案例4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n78">
+     案例5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n83">
+     案例6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-n88">
+     案例7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#header-n94">
+   练习
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <div class="section" id="excel">
+<span id="header-n0"></span><h1>第六章 Excel函数-查找函数<a class="headerlink" href="#excel" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>VLOOKUP是经典的查找与引用函数，在Excel数据查询任务中有多种用途。XLOOKUP作为Excel开发的最新查找函数，在使用便利性上远超VLOOKUP函数，因此如果是能支持XLOOKUP函数，<strong>非常推荐大家使用XLOOKUP函数</strong>，如果自己的电脑Excel不是最新版不支持XLOOKUP函数，也可以来学习VLOOKUP函数。</p>
+</div></blockquote>
+<blockquote>
+<div><p>在本节教程中会重点介绍XLOOKUP函数的相关用法，对于VLOOKUP不好解决，XLOOKUP能解决的问题放在了【案例5】、【案例6】、【案例7】</p>
+</div></blockquote>
+<div class="section" id="vlookup">
+<span id="header-n6"></span><h2>1.VLOOKUP<a class="headerlink" href="#vlookup" title="Permalink to this heading">#</a></h2>
+<div class="section" id="header-n7">
+<span id="id1"></span><h3>案例1<a class="headerlink" href="#header-n7" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，点击【案例1】，根据岗位编号，得到该员工的应发工资</p>
+<p>针对这个问题，可以使用VLOOKUP函数</p>
+<p>【VLOOKUP函数】<strong>=VLOOKUP（要查找的值，查找区域，要返回的结果在查找区域的第几列，精确匹配或近似匹配）</strong></p>
+<p><strong>在L3单元格中输入如下公式</strong></p>
+<p><strong>=VLOOKUP(K2,A2:H50,8,FALSE)</strong></p>
+<p>因为应发工资在整个单元格中的第8列，所以第3个参数为8，第4个参数选择TRUE或者FALSE，TRUE为模糊匹配，FALSE为精确匹配，因此第4个参数选择为FALSE，
+有的EXCEL版本第4个参数是0是精确查找，1是精确匹配，根据实际情况输入即可。</p>
+<div class="figure align-default">
+<img alt="" src="../_images/6.1.gif" />
+</div>
+</div>
+<div class="section" id="header-n15">
+<span id="id2"></span><h3>案例2<a class="headerlink" href="#header-n15" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，点击【案例2】，根据岗位编号，得到该员工的应发工资</p>
+<p>在案例2的任务中我们发现，这里的员工的编号位于最后一列，那么应该如何处理呢？</p>
+<p>如果按照正常的VLOOKUP的函数用法在L2单元格输入=VLOOKUP(K2,A2:H19,7,FALSE)，输入后会发现并没有安装预期得到应发工资。</p>
+<div class="figure align-default">
+<img alt="" src="../_images/6.2.gif" />
+</div>
+<p>这是因为VLOOKUP函数的限制，必须查找的区域在被查找值的左侧，当然这里有其他的办法解决。</p>
+<p>这里用到了换列的小技巧，如果感兴趣可以看相关文章，<a class="reference external" href="https://zhuanlan.zhihu.com/p/377654196">Excel技巧：一文搞懂
+IF{1,0} 的用法</a></p>
+<p>那么在L2中输入如下函数</p>
+<p><strong>=VLOOKUP(K2,IF({1,0},H2:H19,G2:G19),2,FALSE)</strong></p>
+<p>这个函数中，将G2:G17列与H2:H19列做成了一个临时数据组，并让这2列交换位置，这样G2:G19列就在临时数组中的第2列，因此VLOOKUP中第3个参数为2</p>
+<div class="figure align-default">
+<img alt="" src="../_images/6.3.gif" />
+</div>
+</div>
+<div class="section" id="header-n26">
+<span id="id3"></span><h3>案例3<a class="headerlink" href="#header-n26" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，点击【案例3】，根据性别与部门信息，获得员工编号</p>
+<p>案例3的任务与前面不同的是，无法只通过1个信息完全定位到员工编号，因此这里使用了一个技巧，在L3单元格中输入</p>
+<p><strong>=VLOOKUP(J2&amp;K2,IF({1,0},C2:C20&amp;D2:D20,A2:A20),2,0)</strong></p>
+<p>细心的同学可能发现了其中的技巧，就是将多个条件通过&amp;连接成一个字符串，同时将待查找的数据也连接起来，从而通过这个连接的特殊字符来查找数据</p>
+<div class="figure align-default">
+<img alt="" src="../_images/6.4.gif" />
+</div>
+</div>
+<div class="section" id="header-n32">
+<span id="id4"></span><h3>案例4<a class="headerlink" href="#header-n32" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，点击【案例4】，当不知道具体的信息，需要进行模糊查询</p>
+<p>那么如何使用VLOOKUP进行模糊查询呢？</p>
+<p><strong>=VLOOKUP(“*”&amp;K2,A2:F20,2,0)</strong></p>
+<p>Excel中的通配符匹配规则见如下，因为DW为2个字符，我们选择*</p>
+<p>还记得第四章中的SUMIFS函数中的案例，计算小米系列的销量中，我们就使用了通配符</p>
+<div class="figure align-default">
+<img alt="" src="../_images/6.5.png" />
+</div>
+<div class="figure align-default">
+<img alt="" src="../_images/6.6.gif" />
+</div>
+</div>
+</div>
+<div class="section" id="xlookup">
+<span id="header-n39"></span><h2>2 XLOOKUP<a class="headerlink" href="#xlookup" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>XLOOKUP作为Excel开发的最新查找函数，在使用便利性上远超VLOOKUP函数，因此如果是能支持XLOOKUP函数，<strong>非常推荐大家使用XLOOKUP函数</strong>，如果不能支持这个函数也不用灰心，使用VLOOKUP函数也能完成绝大多数查询问题</p>
+</div></blockquote>
+<p>因为XLOOKUP函数功能非常强大，因此在本节中对函数进行讲解</p>
+<p>【XLOOKUP函数】<strong>==XLOOKUP(想要查找值, 想要在哪个数据区域中查找,
+要返回的数据区域，, [ifnotfound], [matchmode], [searchmode])</strong></p>
+<p>第四参数（可选参数）：if<em>not</em>found，找不到结果，就返回第四参数，如果省略第四参数函数默认返回#N/A这个错误值</p>
+<p>第五参数（可选参数）：match_mode，指定匹配类型</p>
+<p>参数为：0 ，精确匹配，未找到结果，返回 #N/A。 这是默认选项。</p>
+<p>参数为：-1，近似匹配，未找到结果，返回下一个较小的项。</p>
+<p>参数为：1，近似匹配，未找到结果，返回下一个较大的项。</p>
+<p>参数为：2 ，通配符匹配</p>
+<p>第六参数（可选参数）：search_mode, 指定要使用的搜索模式</p>
+<p>参数为：1，从第一项开始执行搜索。 这是默认选项。</p>
+<p>参数为：-1，从最后一项开始执行反向搜索。</p>
+<p>参数为：2，根据 lookup_array 按升序排序的二进制搜索。
+如果未排序，将返回无效结果。</p>
+<p>参数为：-2，根据lookup_array 按降序排序的二进制搜索。
+如果未排序，将返回无效结果。</p>
+<div class="section" id="header-n55">
+<span id="id5"></span><h3>案例1<a class="headerlink" href="#header-n55" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，一起来实现【案例1】</p>
+<p>我们在M2单元格中输入如下公式</p>
+<p><strong>=XLOOKUP(K2,A1:A50,H1:H50)</strong></p>
+<p>第1个K2 就是需要查询的岗位编号DW0005</p>
+<p>第2个参数为A1:A50，也就是要查哪一列，<strong>细心的同学已经注意到这里与VLOOKUP的不同</strong></p>
+<p>第3个参数就是需要返回的哪一列，也就是返回H列</p>
+</div>
+<div class="section" id="header-n62">
+<span id="id6"></span><h3>案例2<a class="headerlink" href="#header-n62" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，一起来实现【案例2】</p>
+<p>我们在L2单元格中输入如下公式</p>
+<p><strong>=XLOOKUP(J2,H1:H19,G1:G19)</strong></p>
+<p>细心的同学就发现上面的公式中没有用到列的转换，这个公式的可读性非常强，这是就是XLOOKUP比VLOOKUP更加强大的地方</p>
+</div>
+<div class="section" id="header-n67">
+<span id="id7"></span><h3>案例3<a class="headerlink" href="#header-n67" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，一起来实现【案例3】</p>
+<p>我们在M2单元格中输入如下公式</p>
+<p><strong>=XLOOKUP(J2&amp;K2,C1:C20&amp;D1:D20,A1:A20)</strong></p>
+<p>在XLOOKUP中的多条件查找，只需要使用<strong>&amp;</strong>，将多个条件的信息连接起来即可，非常的方便</p>
+</div>
+<div class="section" id="header-n72">
+<span id="id8"></span><h3>案例4<a class="headerlink" href="#header-n72" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，一起来实现【案例4】</p>
+<p>我们在M2单元格中输入如下公式</p>
+<p><strong>=XLOOKUP(“*”&amp;K2,A2:A20,B2:B20,,2)</strong></p>
+<p>在使用XLOOKUP进行通配符查找事，需要指定第5个参数为2，即告诉XLOOKUP需要用通配符进行查找，这里是好VLOOKUP不同的地方</p>
+<p>具体通配符用法，可见1.4的讲解</p>
+</div>
+<div class="section" id="header-n78">
+<span id="id9"></span><h3>案例5<a class="headerlink" href="#header-n78" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，一起来实现【案例5】，姓名6在数据表中出现了2次，想知道他的最后销售额应该怎么操作？</p>
+<p>我们在I2单元格中输入如下公式</p>
+<p><strong>=XLOOKUP(H2,B1:B20,F1:F20,0,0,-1)</strong></p>
+<p>前3个参数想必大家已经很熟悉了，第4个参数是0，就是当XLOOKUP查找不到时，就返回0，第5个参数是0，就是选择精确匹配，第6个参数选择搜索参数，这里选择-1，从后开始往前搜索，因此这样设置就能获得正确结果。</p>
+</div>
+<div class="section" id="header-n83">
+<span id="id10"></span><h3>案例6<a class="headerlink" href="#header-n83" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，一起来实现【案例6】，这里有4个人，现在想知道这4个人的最大销售额</p>
+<p><strong>=MAX(XLOOKUP(H2:H5,B2:B20,F2:F20,0,0,1))</strong></p>
+<p>先通过XLOOKUP批量查找这4个人销售额，再通过MAX函数，求这4个人中的最大的销售额。</p>
+<div class="figure align-default">
+<img alt="" src="../_images/6.7.gif" />
+</div>
+</div>
+<div class="section" id="header-n88">
+<span id="id11"></span><h3>案例7<a class="headerlink" href="#header-n88" title="Permalink to this heading">#</a></h3>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>，一起来实现【案例7】，当数据集以横向形式时，如果查询到需要的数据</p>
+<p>在C2单元格中输入如下公式</p>
+<p><strong>=XLOOKUP(B6,B2:L2,B1:L1)</strong></p>
+<p>细心的同学发现，横向数据的查询方法与纵向数据并无太大区别</p>
+<div class="figure align-default">
+<img alt="" src="../_images/6.8.gif" />
+</div>
+</div>
+</div>
+<div class="section" id="header-n94">
+<span id="id12"></span><h2>练习<a class="headerlink" href="#header-n94" title="Permalink to this heading">#</a></h2>
+<p>1.选择VLOOKUP和XLOOKUP这2种函数中的一种，完成<code class="docutils literal notranslate"><span class="pre">data/chap6/6.1xlsx</span></code>中的【案例1-4】</p>
+</div>
+</div>
+
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Datawhale, 牧小熊.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

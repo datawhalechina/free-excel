@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第十章Excel看板 &#8212; free-excel 2.1 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/s4defs-roles.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="作者" href="../%E4%BD%9C%E8%80%85.html" />
+    <link rel="prev" title="第九章Excel数据透视" href="chap9.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E4%B8%BB%E9%A1%B5.html">
+  主页
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  教程
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E4%BD%9C%E8%80%85.html">
+  作者
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Datawhale.html">
+  Datawhale
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E7%BB%83%E4%B9%A0%E9%A2%98%E5%8F%82%E8%80%83%E6%93%8D%E4%BD%9C.html">
+  练习题参考操作
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/datawhalechina/free-excel" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="在这里搜索" aria-label="在这里搜索" autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap1.html">
+   第一章 Excel与数据格式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap2.html">
+   第二章 Excel的快捷操作
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap3.html">
+   第三章 Excel的表合并
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap4.html">
+   第四章 Excel函数-逻辑判断
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap5.html">
+   第五章 Excel函数-文本函数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap6.html">
+   第六章 Excel函数-查找函数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap7.html">
+   第七章 Excel函数-动态函数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap8.html">
+   第八章Excel数据可视化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap9.html">
+   第九章Excel数据透视
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   第十章Excel看板
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   第十章Excel看板
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   1.业务背景
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2.实现分析
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   3.实现过程
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1.确定周数
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     2.销售基础整理
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     3.周销售数据变化趋势
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     4.周销售渠道整理
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     5.看板绘制
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     练习
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   思考
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   后记
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <div class="section" id="excel">
+<h1>第十章Excel看板<a class="headerlink" href="#excel" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>数据看板作为数据动态展示的一种重要方式，被广泛的应用于各个领域，因此本节根据1个案例讲解使用Excel制作数据看板的过程，以期起到抛砖引玉的效果，在学习技能的同时也将其应用到实践的工作中</p>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h1>1.业务背景<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>打开<code class="docutils literal notranslate"><span class="pre">data/chap10/10.1.xlsx</span></code>中的数据源，这是某厂家在淘宝、拼多多、京东这3个电商销售平台的销售数据，现在你是这个厂家的员工，老板想知道商品在不同渠道的每周销售情况，想请你做一个数据周报看板。</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.1.png" />
+</div>
+</div>
+<div class="section" id="id2">
+<h1>2.实现分析<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h1>
+<p>1.既然是周报看板，需要确定每天日期所在周数与每周的第几天</p>
+<p>2.根据确定周数对销售金额进行汇总</p>
+<p>3.对销售金额进行动态展示</p>
+</div>
+<div class="section" id="id3">
+<h1>3.实现过程<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h1>
+<div class="section" id="id4">
+<h2>1.确定周数<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>确定日期所在的周数用【WEEKNUM函数】，确定日期是第几周可以用【WEEKDAY函数】</p>
+<p>在H2单元格输入 <strong>=WEEKNUM(B2,2)</strong></p>
+<p>在I2单元格输入 <strong>=WEEKDAY(B2,11)</strong> （如果想得到中文星期几 可以输入
+=TEXT(B2,”aaaa”)）</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.2.gif" />
+</div>
+</div>
+<div class="section" id="id5">
+<h2>2.销售基础整理<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>新建1个工作表，确定动态数据的变量为周数，并确定需要计算的指标，本周开始日期、介绍日期、销售额、订单数、上周销售额、上周订单数、销售额变化、订单数变化</p>
+<p>使用公式求解相关的基础数据</p>
+<p>在C3单元格输入公式<code class="docutils literal notranslate"><span class="pre">=XLOOKUP(C2,数据源!H1:H50001,数据源!B1:B50001)</span></code></p>
+<p>如果发现数据日期变成了44200，显然就是格式不正确，只需要将单元格的格式转为日期即可</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.3.gif" />
+</div>
+<p>在C4单元格输入公式<code class="docutils literal notranslate"><span class="pre">=XLOOKUP(C2,数据源!H1:H50001,数据源!B1:B50001,0,0,-1)</span></code></p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.4.gif" />
+</div>
+<p>对于本周的销售额，可以使用SUMIFS函数获得 ，在C5单元格中输入</p>
+<p><code class="docutils literal notranslate"><span class="pre">=SUMIFS(数据源!$F:$F,数据源!$B:$B,&quot;&gt;=&quot;&amp;$C$3,数据源!$B:$B,&quot;&lt;=&quot;&amp;$C$4)</span></code></p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.5.gif" />
+</div>
+<p>对于本周的订单数，可以使用COUNTIFS函数获得 ，在C6单元格中输入</p>
+<p><code class="docutils literal notranslate"><span class="pre">=COUNTIFS(数据源!$B:$B,&quot;&gt;=&quot;&amp;$C$3,数据源!$B:$B,&quot;&lt;=&quot;&amp;$C$4)</span></code></p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.6.gif" />
+</div>
+<p>对于上周开始日期，可以使用本周开始日期-7，在E3单元格中输入</p>
+<p><code class="docutils literal notranslate"><span class="pre">=C3-7</span></code></p>
+<p>对于上周结束日期，可以使用本周结束日期-7，在E4单元格中输入</p>
+<p><code class="docutils literal notranslate"><span class="pre">=C4-7</span></code></p>
+<p>对于上周销售额，可以使用SUMIFS函数获得 ，在E5单元格中输入</p>
+<p><code class="docutils literal notranslate"><span class="pre">=SUMIFS(数据源!$F:$F,数据源!$B:$B,&quot;&gt;=&quot;&amp;$E$3,数据源!$B:$B,&quot;&lt;=&quot;&amp;$E$4)</span></code></p>
+<p>对于上周的订单数，可以使用COUNTIFS函数获得 ，在E6单元格中输入</p>
+<p><code class="docutils literal notranslate"><span class="pre">=COUNTIFS(数据源!$B:$B,&quot;&gt;=&quot;&amp;$E$3,数据源!$B:$B,&quot;&lt;=&quot;&amp;$E$4)</span></code></p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.7.gif" />
+</div>
+<p>对于相比上周销售额变化，可以使用百分比计算，使用【TEXT函数】确定格式，在C7单元格中输入</p>
+<p><code class="docutils literal notranslate"><span class="pre">=TEXT(((C5-E5)/E5)*100,&quot;0.00&quot;)&amp;&quot;%&quot;</span></code></p>
+<p>对于相比上周订单数变化，可以使用百分比计算，使用【TEXT函数】确定格式，在C8单元格中输入</p>
+<p><code class="docutils literal notranslate"><span class="pre">=TEXT(((C6-E6)/E6)*100,&quot;0.00&quot;)&amp;&quot;%&quot;</span></code></p>
+<p>当然也可以直接设置单元格格式为【百分比】</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.8.gif" />
+</div>
+<p>当然这个【相比上周销售额变化】指标是一个比较重要的指标，可以对这个指标进行格式设置</p>
+<p>选择C6单元格并设置条件格式，判断C5单元格与E5单元格值的大小，如果C5&gt;=E5，那么C6单元值为红，否则为绿色</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.9.gif" />
+</div>
+</div>
+<div class="section" id="id6">
+<h2>3.周销售数据变化趋势<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>对于每周的数据需要做一个统计，并对每周数据的下单金额与下单数进行整理</p>
+<p>装B13-B19单元格输入星期数</p>
+<p>现在需要统计每周1-7的下单金额，因此在C13单元格中输入公式，并向下填充公式</p>
+<p><code class="docutils literal notranslate"><span class="pre">=SUMIFS(数据源!$F:$F,数据源!$B:$B,&quot;&gt;=&quot;&amp;$C$3,数据源!$B:$B,&quot;&lt;=&quot;&amp;$C$4,数据源!$I:$I,&quot;=&quot;&amp;'计算过程'!B13)</span></code></p>
+<p>现在需要统计每周1-7的下单金额，因此在C13单元格中输入公式，并向下填充公式</p>
+<p><code class="docutils literal notranslate"><span class="pre">=COUNTIFS(数据源!$B:$B,&quot;&gt;=&quot;&amp;$C$3,数据源!$B:$B,&quot;&lt;=&quot;&amp;$C$4,数据源!$I:$I,&quot;=&quot;&amp;'计算过程'!B13)</span></code></p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.10.gif" />
+</div>
+<p>接下来就对数据进行可视化展示</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.11.gif" />
+</div>
+</div>
+<div class="section" id="id7">
+<h2>4.周销售渠道整理<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>对于每周的数据需要做一个统计，并对每周数据的渠道分布进行整理</p>
+<p>装G3-G6单元格分别输入产品的电商渠道京东、拼多多、淘宝</p>
+<p>在H3单元格中输入SUMIFS函数求不同渠道的销售金额，并进行向下填充</p>
+<p><code class="docutils literal notranslate"><span class="pre">=SUMIFS(数据源!$F:$F,数据源!$E:$E,G3,数据源!$B:$B,&quot;&gt;=&quot;&amp;$C$3,数据源!$B:$B,&quot;&lt;=&quot;&amp;$C$4)</span></code></p>
+<p>在I3单元格中输入COUNTIF函数求不同渠道的下单数，并进行向下填充</p>
+<p><code class="docutils literal notranslate"><span class="pre">=COUNTIFS(数据源!$E:$E,G3,数据源!$B:$B,&quot;&gt;=&quot;&amp;$C$3,数据源!$B:$B,&quot;&lt;=&quot;&amp;$C$4)</span></code></p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.12.gif" />
+</div>
+<p>接下来就对数据进行可视化展示，将图片进行简单的美化，就可以得到下单金额饼状图与下单数的柱状图</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.13.gif" />
+</div>
+</div>
+<div class="section" id="id8">
+<h2>5.看板绘制<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>完成了前面的全部计算后，接下来的工作就是将绘制的图结合在一起进行展示</p>
+<p>首先是上述计算的数据与绘图的信息集合到一起</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.13.png" />
+</div>
+<p>其中本周的总销量、本周订单数、当前周数、开始日期以及结束日期都是引用计算过程中的值</p>
+<p>本周总销量的值为<code class="docutils literal notranslate"><span class="pre">=计算过程!$C$5</span></code></p>
+<p>本周总订单的值为<code class="docutils literal notranslate"><span class="pre">=计算过程!$C$6</span></code></p>
+<p>本周周数的值为<code class="docutils literal notranslate"><span class="pre">=计算过程!$C$2</span></code></p>
+<p>本周的开始日期为<code class="docutils literal notranslate"><span class="pre">=计算过程!$C$3</span></code></p>
+<p>本周的结束日期为<code class="docutils literal notranslate"><span class="pre">=计算过程!$C$4</span></code></p>
+<p>因为本周的变化情况带有条件单元格式，因此不能直接引用，需要将其转化成链接图片的形式，具体操作为</p>
+<p>1.复制C7单元格</p>
+<p>2.粘贴选择链接的图片</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.14.png" />
+</div>
+<p>对于本周的周数，需要设置按钮方便调节</p>
+<p>1.选择开发工具</p>
+<p>2.选择插入，选择数值调节按钮</p>
+<p>3.选择设置控件格式</p>
+<p>4.设置控件的对应参数</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.15.png" />
+</div>
+<p>到这里就完成了看板90%的步骤，点击按钮，能看动态展示看板的相关数据</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.16.png" />
+</div>
+<p>最后就对看板进行相应的美化，在看板美化过程中也参考了其他EXCEL教程中的配色，因此最后的看板展示效果为</p>
+<div class="figure align-default">
+<img alt="" src="../_images/10.17.png" />
+</div>
+</div>
+<div class="section" id="id9">
+<h2>练习<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>1.完成数据看板，需要通过按钮调节周数，同时销售额，订单数以及数据图进行变化</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h1>思考<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h1>
+<p>1.为什么每周的介绍日期和开始日期都可以使用XLOOKUP获得</p>
+<p>2.为什么每周1的下单金额之和可以通过SUMIF函数求</p>
+<p>3.为什么设置按钮调节每周的数据变化，这样有什么好处</p>
+</div>
+<div class="section" id="id11">
+<h1>后记<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h1>
+<p>行文至此，以上就是Free-excel教程的全部内容，整个教程的编写过程中也广泛的参阅了各式各样的Excel教程，尽力让本教程变得轻松易学，希望读者能掌握相关的Excel技巧，并能灵活的运用到工作中，面对数字化社会，数据将渗透到生活的点点滴滴，拥抱数字，同时也拥抱变化。</p>
+<p>–作者：牧小熊，Datawhale成员，数据分析师</p>
+</div>
+
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Datawhale, 牧小熊.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

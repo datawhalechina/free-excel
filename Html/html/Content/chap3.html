@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第三章 Excel的表合并 &#8212; free-excel 2.1 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/s4defs-roles.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="第四章 Excel函数-逻辑判断" href="chap4.html" />
+    <link rel="prev" title="第二章 Excel的快捷操作" href="chap2.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E4%B8%BB%E9%A1%B5.html">
+  主页
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  教程
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E4%BD%9C%E8%80%85.html">
+  作者
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Datawhale.html">
+  Datawhale
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E7%BB%83%E4%B9%A0%E9%A2%98%E5%8F%82%E8%80%83%E6%93%8D%E4%BD%9C.html">
+  练习题参考操作
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/datawhalechina/free-excel" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="在这里搜索" aria-label="在这里搜索" autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap1.html">
+   第一章 Excel与数据格式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap2.html">
+   第二章 Excel的快捷操作
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   第三章 Excel的表合并
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap4.html">
+   第四章 Excel函数-逻辑判断
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap5.html">
+   第五章 Excel函数-文本函数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap6.html">
+   第六章 Excel函数-查找函数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap7.html">
+   第七章 Excel函数-动态函数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap8.html">
+   第八章Excel数据可视化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap9.html">
+   第九章Excel数据透视
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chap10.html">
+   第十章Excel看板
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#header-n4">
+   1.多表行合并
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#header-n19">
+   2.多表列合并
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#header-n23">
+   练习
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <div class="section" id="excel">
+<span id="header-n0"></span><h1>第三章 Excel的表合并<a class="headerlink" href="#excel" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>当遇到需要将多个表的行记录合并在一起的时候，我们一般会手动复制粘贴，这会带来很多重复繁琐的操作，并且容易出错，可以使用Excel的合并计算工具来快速完成。</p>
+</div></blockquote>
+<div class="section" id="header-n4">
+<span id="id1"></span><h2>1.多表行合并<a class="headerlink" href="#header-n4" title="Permalink to this heading">#</a></h2>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap3/3.1.xlsx</span></code>，点击【案例1】可以看到有3个消费表格，每个客户的消费金额不同，现在需要你统计每个客户在消费的总金额。</p>
+<p>一般的操作方法是将这3个数据复制粘贴，那么有没有更加优雅的方法呢？这里推荐使用合并计算</p>
+<p><strong>1.选择需要汇总的单元格起点</strong></p>
+<p><strong>2.选择Excel中的数据栏</strong></p>
+<p><strong>3.找到数据栏中的合并计算块</strong></p>
+<p><strong>4.选择合并计算函数中的求和</strong></p>
+<p><strong>5.点击引用位置右侧的引用项</strong></p>
+<p><strong>6.选择第一个数据表所在的范围</strong></p>
+<p><strong>7.点击添加</strong></p>
+<p><strong>8.将3个数据表添加到所有引用位置</strong></p>
+<p><strong>9.选择标签位置信息</strong></p>
+<p><strong>10.点击完成</strong></p>
+<p>可以看到完成了所有客户消费金额的求和计算~</p>
+<div class="figure align-default">
+<img alt="" src="../_images/3.1.gif" />
+</div>
+</div>
+<div class="section" id="header-n19">
+<span id="id2"></span><h2>2.多表列合并<a class="headerlink" href="#header-n19" title="Permalink to this heading">#</a></h2>
+<p>打开文件<code class="docutils literal notranslate"><span class="pre">data/chap3/3.1.xlsx</span></code>，点击【案例2】可以看到有3个不同的消费表格，每个客户的消费金额不同，现在需要你统计每个客户在3个不同消费的总金额。</p>
+<p>使用合并计算选择3个不同项目的数据区域</p>
+<div class="figure align-default">
+<img alt="" src="../_images/3.2.gif" />
+</div>
+</div>
+<div class="section" id="header-n23">
+<span id="id3"></span><h2>练习<a class="headerlink" href="#header-n23" title="Permalink to this heading">#</a></h2>
+<p>1.选择<code class="docutils literal notranslate"><span class="pre">data/chap3/3.1.xlsx</span></code>工作簿中的【案例1】得到不同客户的消费次数</p>
+<p>2.选择<code class="docutils literal notranslate"><span class="pre">data/chap3/3.1.xlsx</span></code>工作簿中的【案例2】得到不同客户的不同项目的消费次数</p>
+</div>
+</div>
+
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Datawhale, 牧小熊.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
