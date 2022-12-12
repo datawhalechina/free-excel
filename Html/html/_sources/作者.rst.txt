@@ -1,0 +1,51 @@
+
+
+作者
+====
+
+牧小熊，华中农业大学硕士，Datawhale成员，互联网金融数据分析师
+
+
+
+开源内容
+--------
+
+-  `《free-excel》 <https://github.com/datawhalechina/free-excel>`_
+
+-  `《心跳信号分类》 <https://github.com/datawhalechina/team-learning-data-mining/tree/master/HeartbeatClassification>`_
+
+-  `《python自动化办公》 <https://github.com/datawhalechina/office-automation>`_
+
+-  `《如何打一个数据挖掘比赛-
+   入门篇》 <https://linklearner.com/#/learn/detail/0>`_
+
+
+Github
+----------
+https://github.com/muxiaoxiong
+
+知乎
+----------
+https://www.zhihu.com/people/muxiaoxiong
+
+E-mail
+----------
+1335008986@qq.com
+
+微信
+----------
+.. image:: _static/wechat.jpg
+   :height: 388 px
+   :width: 336 px
+   :scale: 100 %
+   :align: center
+
+知乎咨询
+----------
+.. image:: _static/zixun.png
+   :height: 360 px
+   :width: 779 px
+   :scale: 100 %
+   :align: left
+
+点击即可跳转△
