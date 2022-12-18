@@ -7,7 +7,7 @@ free excel中文意为**自由Excel**，源于希望学习者能够通过该教�
 ## 文件内容
 
 - data    :项目数据集
-- Html    :网页版课程
+- docs    :网页版课程
 - Markdown:MD版课程
 - 历史版本:V2.0课程
 
